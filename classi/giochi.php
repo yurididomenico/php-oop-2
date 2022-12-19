@@ -12,7 +12,7 @@
             Tipologia $tipologia,
             Float $prezzo,
 
-            Float $caratteristiche,
+            String $caratteristiche,
             String $dimensioni
         )
         {

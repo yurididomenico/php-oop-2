@@ -19,15 +19,17 @@
     [
         new Cibo('./assets/img/royal_canin_maxiAdult.jpg', 'Royal Canin', $tipologie['Cane'], 11.49, 2000, 'prosciutto, riso'),
         new Cibo('./assets/img/royal_canin_carlin.jpg', 'Royal Canin', $tipologie['Cane'], 10.99, 1500, 'pollo, riso'),
-        new Oggetto('./assets/img/lettiera.png', 'Lettiera aperta per gatti con bordo igienico', $tipologie['Gatto'], 5.90, 'plastica', '50/35')
+        new Oggetto('./assets/img/lettiera.png', 'Lettiera aperta per gatti con bordo igienico', $tipologie['Gatto'], 5.90, 'plastica', '50/35cm'),
+        new Gioco('./assets/img/bastoncinoGatti.jpg', 'Bastoncino per gatti con piume colorate', $tipologie['Gatto'], 3.99, 'plastica e piume', '40cm'),
     ];
 
     // var_dump($prodotti);
     // echo $prodotti[2] -> nome
 
-    echo '<h3>' . $prodotti[2] -> nome . '</h3>';
-    echo '<p>' . $prodotti[2] -> prezzo . '</p>';
-    echo '<p>' . $prodotti[2] -> materiale . '</p>';
-    echo '<p>' . $prodotti[2] -> dimensioni . '</p>';
+    echo '<img src="' . $prodotti[0] -> percorsoImmagine . '">';
+    echo '<h3>' . $prodotti[0] -> nome . '</h3>';
+    echo '<p>' . $prodotti[0] -> prezzo . '</p>';
+    echo '<p>' . $prodotti[0] -> pesoNetto . '</p>';
+    echo '<p>' . $prodotti[0] -> ingredienti . '</p>';
     
 ?>
