@@ -35,33 +35,7 @@
     // echo '<p>' . $prodotti[0] -> ingredienti . '.</p>';
     //--------------------------------------------------------------------------//
 
-    //DINAMICO 
-    foreach ($prodotti as $elem)
-    {
-        echo '<div>';
-            echo '<img src="' . $elem -> percorsoImmagine . '">';
-            echo '<p>' . $elem -> prezzo . ' euro</p>';
-            echo '<p>' . $elem -> nome . '</p>';
-            echo '<p>' . $elem -> tipologia -> icona . '</p>';
-            echo '<p>' . $elem -> tipologia -> nome . '</p>';
-
-            if($elem instanceof Cibo)
-            {
-                echo '<p>' . $elem -> pesoNetto . 'g</p>';
-                echo '<p>' . $elem -> ingredienti . '</p>';
-            }
-            else if($elem instanceof Oggetto)
-            {
-                echo '<p>' . $elem -> materiale . '</p>';
-                echo '<p>' . $elem -> dimensioni . '</p>';
-            }
-            else if($elem instanceof Gioco)
-            {
-                echo '<p>' . $elem -> caratteristiche . '</p>';
-                echo '<p>' . $elem -> dimensioni . '</p>';
-            }
-        echo '</div>';
-    }
+    
     
 
     
@@ -85,8 +59,37 @@
     <body>
     <div id='app'>
 
-        <div class="container d-flex">
-        <!--  -->
+        <div class="container d-flex flex-wrap">
+        <!-- DINAMICO -->
+        <?php
+        
+            foreach ($prodotti as $elem)
+            {
+                echo '<div class="prodotto border">';
+                    echo '<img src="' . $elem -> percorsoImmagine . '">';
+                    echo '<p>' . $elem -> prezzo . ' &euro;</p>';
+                    echo '<p>' . $elem -> nome . '</p>';
+                    echo '<p><span class="pe-3">' . $elem -> tipologia -> icona .'</span><span>' . $elem -> tipologia -> nome . '</span></p>';
+        
+                    if($elem instanceof Cibo)
+                    {
+                        echo '<p>' . $elem -> pesoNetto . 'g</p>';
+                        echo '<p>' . $elem -> ingredienti . '</p>';
+                    }
+                    else if($elem instanceof Oggetto)
+                    {
+                        echo '<p>' . $elem -> materiale . '</p>';
+                        echo '<p>' . $elem -> dimensioni . '</p>';
+                    }
+                    else if($elem instanceof Gioco)
+                    {
+                        echo '<p>' . $elem -> caratteristiche . '</p>';
+                        echo '<p>' . $elem -> dimensioni . '</p>';
+                    }
+                echo '</div>';
+            }
+        
+        ?>
         </div>
     
 
@@ -103,10 +106,16 @@
 </html>
 
 <style>
+    .prodotto
+    {
+        width: calc(100% / 3 - 50px);
+        margin: 25px;
+        padding: 20px;
+    }
+
     img
     {
-        width: 400px;
+        width: 100%;
         aspect-ratio: 1/1;
-        object-fit: cover;
     }
 </style>
