@@ -58,6 +58,9 @@
 
     <body>
     <div id='app'>
+        <header>
+            <h1>YDD - Shop</h1>
+        </header>
 
         <div class="container d-flex flex-wrap">
         <!-- DINAMICO -->
@@ -65,10 +68,11 @@
         
             foreach ($prodotti as $elem)
             {
-                echo '<div class="prodotto border">';
+                echo '<div class="prodotto border border-3">';
                     echo '<img src="' . $elem -> percorsoImmagine . '">';
+                    echo '<hr>';
+                    echo '<h4>' . $elem -> nome . '</h4>';
                     echo '<p>' . $elem -> prezzo . ' &euro;</p>';
-                    echo '<p>' . $elem -> nome . '</p>';
                     echo '<p><span class="pe-3">' . $elem -> tipologia -> icona .'</span><span>' . $elem -> tipologia -> nome . '</span></p>';
         
                     if($elem instanceof Cibo)
@@ -106,16 +110,43 @@
 </html>
 
 <style>
-    .prodotto
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+    *
     {
-        width: calc(100% / 3 - 50px);
-        margin: 25px;
-        padding: 20px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        color: inherit;
+        text-decoration: none;
+        list-style-type: none;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    body
+    {
+        background-color: #b5d8ff;
     }
 
     img
     {
         width: 100%;
         aspect-ratio: 1/1;
+    }
+
+    header
+    {
+        background-color: #99bade;
+        padding: 10px 50px;
+        margin-top: 30px;
+        box-shadow: 0 0 10px black;
+    }
+
+    .prodotto
+    {
+        background-color: #ffffff;
+        width: calc(100% / 3 - 50px);
+        margin: 25px;
+        padding: 20px;
     }
 </style>
