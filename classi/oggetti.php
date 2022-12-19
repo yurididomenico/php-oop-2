@@ -1,7 +1,7 @@
 <?php
     include_once __DIR__ . '/prodotto.php';
 
-    class Oggetti extends Prodotto
+    class Oggetto extends Prodotto
     {
         public $materiale;
         public $dimensioni;
@@ -12,7 +12,7 @@
             Tipologia $tipologia,
             Float $prezzo,
 
-            Float $materiale,
+            String $materiale,
             String $dimensioni
         )
         {

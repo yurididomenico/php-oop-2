@@ -1,7 +1,7 @@
 <?php
     include_once __DIR__ . '/prodotto.php';
 
-    class Giochi extends Prodotto
+    class Gioco extends Prodotto
     {
         public $caratteristiche;
         public $dimensioni;

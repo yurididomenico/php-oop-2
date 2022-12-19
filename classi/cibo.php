@@ -12,7 +12,7 @@
             Tipologia $tipologia,
             Float $prezzo,
 
-            Float $pesoNetto,
+            Int $pesoNetto,
             String $ingredienti
         )
         {
