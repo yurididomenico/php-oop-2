@@ -1,5 +1,7 @@
 <?php
 
+    include_once __DIR__ . '/tipologia.php';
+
     class Prodotto
     {
         public $percorsoImmagine;
@@ -10,7 +12,7 @@
         public function __construct(
             String $percorsoImmagine,
             String $nome,
-            String $tipologia,
+            Tipologia $tipologia,
             Float $prezzo
         )
         {
