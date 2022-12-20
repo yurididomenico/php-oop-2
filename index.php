@@ -156,7 +156,7 @@
         scale: 1.1;
         transition-duration: 200ms;
         cursor: pointer;
-        box-shadow: 0 0 100px blue;
+        box-shadow: 0 0 100px black;
     }
 
 
