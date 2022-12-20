@@ -120,6 +120,7 @@
         text-decoration: none;
         list-style-type: none;
         font-family: 'Montserrat', sans-serif;
+        transition-duration: 300ms;
     }
 
     body
@@ -149,4 +150,14 @@
         padding: 20px;
         box-shadow: 0 0 10px black;
     }
+
+    .prodotto:hover
+    {
+        scale: 1.1;
+        transition-duration: 200ms;
+        cursor: pointer;
+        box-shadow: 0 0 100px blue;
+    }
+
+
 </style>
