@@ -72,30 +72,29 @@
                     echo '<img src="' . $elem -> percorsoImmagine . '">';
                     echo '<hr>';
                     echo '<h4>' . $elem -> nome . '</h4>';
-                    echo '<p>' . $elem -> prezzo . ' &euro;</p>';
-                    echo '<p><span class="pe-3">' . $elem -> tipologia -> icona .'</span><span>' . $elem -> tipologia -> nome . '</span></p>';
+                    echo '<p>Prezzo: ' . $elem -> prezzo . ' &euro;</p>';
+                    echo '<p>Tipologia: <span class="pe-3">' . $elem -> tipologia -> icona .'</span><span>' . $elem -> tipologia -> nome . '</span></p>';
         
-                    if($elem instanceof Cibo)
+                    if(get_class($elem) == 'Cibo')
                     {
-                        echo '<p>' . $elem -> pesoNetto . 'g</p>';
-                        echo '<p>' . $elem -> ingredienti . '</p>';
+                        echo '<p>Peso Netto: ' . $elem -> pesoNetto . 'g</p>';
+                        echo '<p>Ingredienti: ' . $elem -> ingredienti . '</p>';
                     }
-                    else if($elem instanceof Oggetto)
+                    else if(get_class($elem) == 'Oggetto')
                     {
-                        echo '<p>' . $elem -> materiale . '</p>';
-                        echo '<p>' . $elem -> dimensioni . '</p>';
+                        echo '<p>Materiale: ' . $elem -> materiale . '</p>';
+                        echo '<p>Dimensioni: ' . $elem -> dimensioni . '</p>';
                     }
-                    else if($elem instanceof Gioco)
+                    else if(get_class($elem) == 'Gioco')
                     {
-                        echo '<p>' . $elem -> caratteristiche . '</p>';
-                        echo '<p>' . $elem -> dimensioni . '</p>';
+                        echo '<p>Caratteristiche: ' . $elem -> caratteristiche . '</p>';
+                        echo '<p>Dimensioni: ' . $elem -> dimensioni . '</p>';
                     }
                 echo '</div>';
             }
         
         ?>
         </div>
-    
 
     </div>
         <!-- Axios 1.1.3 -->
@@ -148,5 +147,6 @@
         width: calc(100% / 3 - 50px);
         margin: 25px;
         padding: 20px;
+        box-shadow: 0 0 10px black;
     }
 </style>
